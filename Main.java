@@ -44,5 +44,7 @@ public class Main {
 
         // Cerrar el scanner
         scanner.close();
+
+        System.out.println("Hola ");
     }
 }

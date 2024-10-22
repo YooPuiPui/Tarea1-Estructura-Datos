@@ -27,7 +27,7 @@ public class Inventario {
             }
         }
     }
-     public void EliminarProducto(){
+        public void EliminarProducto(){
 
-     }
+        }
 }
