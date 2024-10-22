@@ -46,19 +46,18 @@ public class Mueble {
     public double getCapacidadPeso() { return capacidadPeso; }
     public void setCapacidadPeso(double capacidadPeso) { this.capacidadPeso = capacidadPeso; }
   
-    // Método toString
+    // Método 
     @Override
     public String toString() {
-        return "Mueble [ " +
-                "nombre=' " + nombre + "\n" +
-                "- precio = " + precio +
-                "- tipo = '" + tipo + "\n" +
-                "- material = '" + material + "\n" +
-                "- dimensiones = '" + dimensiones + "\n" +
-                "- color = '" + color + "\n" +
-                "- estilo = '" + estilo + "\n" +
-                "- capacidadPeso = " + capacidadPeso +
+        return "Mueble [ " + "\n" +
+                "nombre:  " + nombre + "\n" +
+                "- precio: " + precio + "\n" +
+                "- tipo:  " + tipo + "\n" +
+                "- material: " + material + "\n" +
+                "- dimensiones: '" + dimensiones + "\n" +
+                "- color: " + color + "\n" +
+                "- estilo: " + estilo + "\n" +
+                "- capacidadPeso: " + capacidadPeso +
                 " ]";
     }
-  }
-  
+}
