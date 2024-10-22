@@ -5,7 +5,7 @@ public class Main {
         Inventario inventario = new Inventario();
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar al usuario los detalles del mueble
+        //! Solicitar al usuario los detalles del mueble
         System.out.println("Ingrese los detalles del mueble:");
 
         System.out.print("Nombre: ");
@@ -13,7 +13,7 @@ public class Main {
 
         System.out.print("Precio: ");
         double precio = scanner.nextDouble();
-        scanner.nextLine();  // Consumir el salto de línea
+        scanner.nextLine();
 
         System.out.print("Tipo de mueble (Sofá, Silla, Mesa, etc.): ");
         String tipo = scanner.nextLine();
@@ -32,15 +32,23 @@ public class Main {
 
         System.out.print("Capacidad de peso (en kg): ");
         double capacidadPeso = scanner.nextDouble();
+        scanner.nextLine();
 
-        // Crear el objeto Mueble con los datos ingresados
+        //? Crear el objeto Mueble con los datos ingresados
         Mueble mueble = new Mueble(nombre, precio, tipo, material, dimensiones, color, estilo, capacidadPeso);
-        
-        // Agregar el mueble al inventario
+
+        //? Agregar el mueble al inventario
         inventario.agregarProducto(mueble);
 
         // Mostrar el inventario
-        inventario.mostrarInventario();
+        //inventario.mostrarInventario();
+
+        //! Listar muebles por estilo
+        System.out.println("\nIngrese el estilo de mueble a buscar (Moderno, Rústico, Clásico): ");
+        String estiloBuscado = scanner.nextLine();  // Capturar correctamente el estilo a buscar
+
+        // Listar muebles del estilo buscado
+        inventario.listarEstilos(estiloBuscado);
 
         // Cerrar el scanner
         scanner.close();
