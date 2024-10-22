@@ -49,16 +49,16 @@ public class Mueble {
     // Método toString
     @Override
     public String toString() {
-        return "Mueble{ " +
-                "nombre='" + nombre + "\n" +
-                ", precio=" + precio +
-                ", tipo='" + tipo + "\n" +
-                ", material='" + material + "\n" +
-                ", dimensiones='" + dimensiones + "\n" +
-                ", color='" + color + "\n" +
-                ", estilo='" + estilo + "\n" +
-                ", capacidadPeso=" + capacidadPeso +
-                " }";
+        return "Mueble [ " +
+                "nombre=' " + nombre + "\n" +
+                "- precio = " + precio +
+                "- tipo = '" + tipo + "\n" +
+                "- material = '" + material + "\n" +
+                "- dimensiones = '" + dimensiones + "\n" +
+                "- color = '" + color + "\n" +
+                "- estilo = '" + estilo + "\n" +
+                "- capacidadPeso = " + capacidadPeso +
+                " ]";
     }
   }
   
