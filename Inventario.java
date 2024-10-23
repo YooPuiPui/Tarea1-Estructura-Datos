@@ -1,8 +1,11 @@
+
 public class Inventario {
     //? Declaramos un array  con un tamaño fijo
     private Mueble[] muebles;
+
     //?  Para llevar el control del índice del array
-    private int indiceActual;  
+    private int indiceActual; 
+    private int cantidadMuebles
 
     // Constructor que inicializa el array con un tamaño fijo de 100 muebles, por ejemplo
     public Inventario() {
@@ -34,7 +37,7 @@ public class Inventario {
         }
     }
 
-    // Listar muebles por estilo
+    //*  Listar productos por estilo
     public void listarEstilos(String estilo) {
         boolean encontrado = false;
         System.out.println("Muebles de estilo: " + estilo);
@@ -44,10 +47,12 @@ public class Inventario {
                 System.out.println(muebles[i]);
                 encontrado = true;
             }
-        }
+    }
 
         if (!encontrado) {
             System.out.println("No se encontraron muebles de este estilo: " + estilo);
         }
     }
+
+
 }

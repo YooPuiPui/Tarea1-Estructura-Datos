@@ -76,6 +76,7 @@ public class Main {
                     System.out.println("Opción no válida. Por favor, seleccione una opción entre 1 y 4.");
                     break;
             }
+            
         }
 
         // Cerrar el scanner
