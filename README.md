@@ -28,3 +28,17 @@ Cada mueble tiene los siguientes atributos:
 - **Color**: Color del mueble.
 - **Estilo**: Estilo del mueble (moderno, rústico, clásico).
 - **Capacidad de Peso**: Capacidad de peso soportada por el mueble en kilogramos.
+
+## Requisitos
+- **Java Development Kit (JDK)** 11 o superior.
+## Instrucciones para clonar el repositorio
+1. Abre una terminal
+2. Clona el repositorio usando el siguiente comando:
+   ```bash
+   git clone <https://github.com/YooPuiPui/Tarea1-Estructura-Datos.git>
+3. Navega al directorio del proyecto
+    ```cd <Nombre_del_directorio>
+
+## Compilar y ejecutar el programa
+    ```javac Main.java Inventario.java Mueble.java
+    ```java Main
