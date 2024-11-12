@@ -4,15 +4,16 @@ public class Main {
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
         Scanner scanner = new Scanner(System.in);
-        boolean continuar = true;  // Para controlar el ciclo del menú
+        boolean continuar = true; 
 
         while (continuar) {
-            System.out.println("\n===== MENÚ =====");
-            System.out.println("1. Agregar un mueble");
+            System.out.println("\n----- MENÚ -----");
+            System.out.println("1. Agregar un producto");
             System.out.println("2. Mostrar inventario");
-            System.out.println("3. Listar muebles por estilo");
-            System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("3. Listar productos por estilo");
+            System.out.println("4. Eliminar un producto");
+            System.out.println("5. Salir");
+            System.out.print("\nSeleccione una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine();  // Consumir el salto de línea
 
@@ -61,21 +62,35 @@ public class Main {
 
                 case 3:
                     //! Listar muebles por estilo
-                    System.out.print("Ingrese el estilo de mueble a buscar (Moderno, Rústico, Clásico): ");
+                    System.out.print("\n Ingrese el estilo de mueble a buscar (Moderno, Rústico, Clásico): ");
                     String estiloBuscado = scanner.nextLine();
                     inventario.listarEstilos(estiloBuscado);
                     break;
 
                 case 4:
+                    System.out.println("Ingrese el nombre del prosucto que desea eliminar: ");
+                    String nombreEliminar = scanner.nextLine();
+
+                    System.out.println("Ingrese el precio del producto: ");
+                    double precioEliminar = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    inventario.eliminarProducto(nombreEliminar + "\n ",+ precioEliminar);
+                break;
+
+
+                case 5:
                     //! Salir del programa
                     continuar = false;
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("\n Saliendo del programa...");
                     break;
 
                 default:
-                    System.out.println("Opción no válida. Por favor, seleccione una opción entre 1 y 4.");
+                    System.out.println("\n Opción no válida. Por favor, seleccione una opción entre 1 y 4.");
                     break;
-            }
+            }System.out.println("Presione Enter para continuar...");
+            Scanner scanner3 = new Scanner(System.in);
+            scanner3.nextLine();
             
         }
 

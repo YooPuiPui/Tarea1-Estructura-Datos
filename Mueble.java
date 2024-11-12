@@ -21,7 +21,7 @@ public class Mueble {
         this.capacidadPeso = capacidadPeso;
     }
   
-    // Getters y setters
+
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
   
@@ -29,7 +29,7 @@ public class Mueble {
     public void setPrecio(double precio) { this.precio = precio; }
   
     public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }  // Corregido
+    public void setTipo(String tipo) { this.tipo = tipo; }
   
     public String getMaterial() { return material; }
     public void setMaterial(String material) { this.material = material; }
@@ -46,15 +46,14 @@ public class Mueble {
     public double getCapacidadPeso() { return capacidadPeso; }
     public void setCapacidadPeso(double capacidadPeso) { this.capacidadPeso = capacidadPeso; }
   
-    // Método 
-    @Override
+
     public String toString() {
         return "Mueble [ " + "\n" +
                 "nombre:  " + nombre + "\n" +
                 "- precio: " + precio + "\n" +
                 "- tipo:  " + tipo + "\n" +
                 "- material: " + material + "\n" +
-                "- dimensiones: '" + dimensiones + "\n" +
+                "- dimensiones: " + dimensiones + "\n" +
                 "- color: " + color + "\n" +
                 "- estilo: " + estilo + "\n" +
                 "- capacidadPeso: " + capacidadPeso +
