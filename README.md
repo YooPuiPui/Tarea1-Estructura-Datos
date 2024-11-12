@@ -37,8 +37,11 @@ Cada mueble tiene los siguientes atributos:
    ```bash
    git clone <https://github.com/YooPuiPui/Tarea1-Estructura-Datos.git>
 3. Navega al directorio del proyecto
-    ```cd <Nombre_del_directorio>
+    ```bash
+    cd <Nombre_del_directorio>
 
 ## Compilar y ejecutar el programa
-    ```javac Main.java Inventario.java Mueble.java
-    ```java Main
+    ```bash
+    javac Main.java Inventario.java Mueble.java
+    ```bash
+    java Main
