@@ -15,11 +15,10 @@ public class Main {
             System.out.println("5. Salir");
             System.out.print("\nSeleccione una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
-
+            scanner.nextLine();  
             switch (opcion) {
                 case 1:
-                    // Agregar un mueble
+                    //! Agregar un mueble
                     System.out.println("Ingrese los detalles del mueble:");
 
                     System.out.print("Nombre: ");
@@ -68,14 +67,12 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Ingrese el nombre del prosucto que desea eliminar: ");
-                    String nombreEliminar = scanner.nextLine();
-
-                    System.out.println("Ingrese el precio del producto: ");
-                    double precioEliminar = scanner.nextDouble();
+                    //! Eliminar  mueble
+                    System.out.println("\nIngrese las posicion del mueble a eliminar: ");
+                    int indiceEliminar = scanner.nextInt();
                     scanner.nextLine();
 
-                    inventario.eliminarProducto(nombreEliminar + "\n ",+ precioEliminar);
+                    inventario.eliminarProducto(indiceEliminar);
                 break;
 
 
@@ -94,7 +91,6 @@ public class Main {
             
         }
 
-        // Cerrar el scanner
         scanner.close();
     }
 }

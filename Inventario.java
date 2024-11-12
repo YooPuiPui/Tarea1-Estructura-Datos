@@ -7,13 +7,13 @@ public class Inventario {
     //?  Para llevar el control del índice del array
     private int indiceActual; 
 
-    // Constructor que inicializa el array con un tamaño fijo de 100 muebles, por ejemplo
+    //* Constructor que inicializa el array con un tamaño fijo de 100 muebles
     public Inventario() {
         muebles = new Mueble[100];
-        indiceActual = 1;
+        indiceActual = 0;
     }
 
-    // Función para agregar un mueble
+    //*  Función para agregar un mueble
     public void agregarProducto(Mueble mueble) {
         if (indiceActual < muebles.length) {
             //* Añadimos el mueble en el índice actual
@@ -42,8 +42,8 @@ public class Inventario {
         boolean encontrado = false;
         System.out.println("Muebles de estilo: " + estilo);
 
-        for (int i = 1; i < indiceActual; i++) {
-            if (muebles[i].getEstilo().equalsIgnoreCase(estilo)) {
+        for (int i = 0; i < indiceActual; i++) {
+            if (muebles[i] != null && muebles[i].getEstilo().equalsIgnoreCase(estilo)) {
                 System.out.println(muebles[i]);
                 encontrado = true;
             }
@@ -54,28 +54,16 @@ public class Inventario {
         }
     }
 
-    //* Eliminar un producto */
+    public void eliminarProducto(int indice){
+        if (indice >= 0 && indice < indiceActual && muebles[indice] != null) {
+            System.out.println("Mueble eliminado: " + muebles[indice].getNombre());
+            muebles[indice] = null;
+    
 
-    public void eliminarProducto(String nombre, double precio) {
-        boolean encontrado = false;
-        
-    
-        for (int i = 1; i < indiceActual; i++) {  // Comenzamos en 1 para evitar la posición 0 (mueble "eliminado")
-            if (muebles[i] != null && muebles[i].getNombre().equalsIgnoreCase(nombre) && muebles[i].getPrecio() == precio) {
-                encontrado = true;
-    
-                // Mover el último elemento a la posición actual
-                muebles[i] = muebles[indiceActual - 1];
-                muebles[indiceActual - 1] = null;  // Limpiamos la última posición
-    
-                indiceActual--;  // Reducimos el índice actual del inventario
-                System.out.println("Producto eliminado:\nNombre: " + nombre + "\nPrecio: " + precio);
-                break;
-            }
-        }
-    
-        if (!encontrado) {
-            System.out.println("No se encontró ningún mueble con el nombre '" + nombre + "' y precio " + precio);
+            muebles[indiceActual - 1] = null;
+            indiceActual--;
+        } else {
+            System.out.println("Índice inválido o el mueble ya fue eliminado.");
         }
     }
     
