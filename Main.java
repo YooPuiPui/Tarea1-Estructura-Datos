@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true; 
+        Historial historial = new Historial();
 
         while (continuar) {
             System.out.println("\n----- MENÚ -----");
@@ -12,10 +14,15 @@ public class Main {
             System.out.println("2. Mostrar inventario");
             System.out.println("3. Listar productos por estilo");
             System.out.println("4. Eliminar un producto");
-            System.out.println("5. Salir");
+            System.out.println("5. Modificar un producto");
+            System.out.println("6. Mostar historial");
+            System.out.println("7. Consultar por dimensiones");
+            System.out.println("8. Listar muebles por material");
+            System.out.println("9. Salir");
             System.out.print("\nSeleccione una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  
+            scanner.nextLine();
+            
             switch (opcion) {
                 case 1:
                     //! Agregar un mueble
@@ -75,12 +82,65 @@ public class Main {
                     inventario.eliminarProducto(indiceEliminar);
                 break;
 
-
                 case 5:
-                    //! Salir del programa
-                    continuar = false;
-                    System.out.println("\n Saliendo del programa...");
+                System.out.println("\nIngrese el nombre del producto a modificar: ");
+                    String nombreModificar = scanner.nextLine();
+
+                    System.out.print("Nuevo precio: ");
+                    double nuevoPrecio = scanner.nextDouble();
+                    scanner.nextLine();  
+
+                    System.out.print("Nuevo tipo: ");
+                    String newTipo = scanner.nextLine();
+
+                    System.out.print("Nuevo material: ");
+                    String newMaterial = scanner.nextLine();
+
+                    System.out.print("Nuevas dimensiones: ");
+                    String newDimensiones = scanner.nextLine();
+
+                    System.out.print("Nuevo color: ");
+                    String newColor = scanner.nextLine();
+
+                    System.out.print("Nuevo estilo: ");
+                    String newEstilo = scanner.nextLine();
+
+                    System.out.print("Nueva capacidad de peso: ");
+                    double newCapacidadPeso = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    // Llamar a la función para modificar el producto
+                    boolean modificado = ModificarProducto.modificarProducto(
+                        inventario.getMuebles(), nombreModificar, nuevoPrecio, newTipo, newMaterial, newDimensiones, newColor, newEstilo, newCapacidadPeso
+                    );
+
+                    if (modificado) {
+                        System.out.println("Producto modificado con éxito.");
+                    } else {
+                        System.out.println("Producto no encontrado.");
+                    }
                     break;
+
+                case 6:
+                    historial.mostrarHistorial();
+                break;    
+
+                case 7: 
+                System.out.println("Ingrese las dinmensiones a buscar: ");
+                    String dimensiones2 = scanner.nextLine();
+                    inventario.consultardimensiones(dimensiones2);
+
+                case 8:
+                System.out.println("Ingrese el material de mueble que desea buscar (Madera, vidrio, acero)");
+                    String buscarMaterial = scanner.nextLine();
+                    inventario.verificarMateral(buscarMaterial);
+                    break;
+                
+                case 9: 
+                //! Salir del programa
+                continuar = false;
+                System.out.println("\n Saliendo del programa...");
+                break;
 
                 default:
                     System.out.println("\n Opción no válida. Por favor, seleccione una opción entre 1 y 4.");
