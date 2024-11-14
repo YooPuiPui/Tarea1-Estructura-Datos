@@ -41,11 +41,8 @@ Cada mueble tiene los siguientes atributos:
     cd <Nombre_del_directorio>
 
 ## Compilar y ejecutar el programa
-    ```bash
+
     javac Main.java Inventario.java Mueble.java
-    ```
-    
-    ```bash
     java Main
-    ```
+
 
