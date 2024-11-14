@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Inventario {
 
@@ -66,5 +68,49 @@ public class Inventario {
             System.out.println("Índice inválido o el mueble ya fue eliminado.");
         }
     }
-    
+
+    public List<Mueble> getMuebles() {
+        List<Mueble> listaMuebles = new ArrayList<>();
+        for (int i = 0; i < indiceActual; i++) {
+            if (muebles[i] != null) {
+                listaMuebles.add(muebles[i]);
+            }
+        }
+        return listaMuebles;
+    }
+
+    //Consultar Dimensiones
+    public void consultardimensiones(String Dimension){
+        boolean encontrado= false;
+        System.out.print("Dimensiones del mueble: "+Dimension);
+
+        for(int i=0; i< indiceActual; i++){
+            if(muebles[i].getDimensiones().equalsIgnoreCase(Dimension)){
+                System.out.println(muebles[i]);
+                encontrado= true;
+            }
+
+        }
+
+        if(!encontrado){
+            System.out.println("\nNo se encontraron muebles con estas dimensiones: "+ Dimension);
+        }
+    }
+
+    public void verificarMateral(String material){
+        boolean encontrado = false;
+
+        System.out.println("Muebles encontrados hechos de " + material);
+
+        for(int i=0; i < indiceActual; i++){
+            if(muebles[i] !=null && muebles[i].getMaterial().equalsIgnoreCase(material)){
+                System.out.println(muebles[i]);
+                encontrado = true;
+            }
+        }
+        
+        if(!encontrado){
+            System.out.println("No se encontraron muebles hechos de " +material);
+        }
+    }
 }
